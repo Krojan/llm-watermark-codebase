@@ -1,0 +1,499 @@
+[
+  {
+    "text": "Write a python function to remove first and last occurrence of a given character from the string.",
+    "code": "def remove_Occ(s,ch): \r\n    for i in range(len(s)): \r\n        if (s[i] == ch): \r\n            s = s[0 : i] + s[i + 1:] \r\n            break\r\n    for i in range(len(s) - 1,-1,-1):  \r\n        if (s[i] == ch): \r\n            s = s[0 : i] + s[i + 1:] \r\n            break\r\n    return s ",
+    "task_id": 11,
+    "test_setup_code": "",
+    "test_list": [
+      "assert remove_Occ(\"hello\",\"l\") == \"heo\"",
+      "assert remove_Occ(\"abcda\",\"a\") == \"bcd\"",
+      "assert remove_Occ(\"PHP\",\"P\") == \"H\""
+    ],
+    "challenge_test_list": [
+      "assert remove_Occ(\"hellolloll\",\"l\") == \"helollol\"",
+      "assert remove_Occ(\"\",\"l\") == \"\""
+    ],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to remove first and last occurrence of a given character from the string.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert remove_Occ(\"hello\",\"l\") == \"heo\"', 'assert remove_Occ(\"abcda\",\"a\") == \"bcd\"', 'assert remove_Occ(\"PHP\",\"P\") == \"H\"']\nOutput: [/INST]  ```\ndef remove_Occ(str, char):\n  return str[:str.find(char)] + str[str.find(\"char\"):-1]\n```",
+        "is_watermarked": false,
+        "score": 0.49077568134171906
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to remove first and last occurrence of a given character from the string.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert remove_Occ(\"hello\",\"l\") == \"heo\"', 'assert remove_Occ(\"abcda\",\"a\") == \"bcd\"', 'assert remove_Occ(\"PHP\",\"P\") == \"H\"']\nOutput: [/INST]  ```\ndef remove_Occ(string, char):\n    return string[:string.index(char)] + string[string.index(\"char\") + 1:]\n```",
+        "is_watermarked": false,
+        "score": 0.490146750524109
+      }
+    }
+  },
+  {
+    "text": "Write a function to sort a given matrix in ascending order according to the sum of its rows.",
+    "code": "def sort_matrix(M):\r\n    result = sorted(M, key=sum)\r\n    return result",
+    "task_id": 12,
+    "test_setup_code": "",
+    "test_list": [
+      "assert sort_matrix([[1, 2, 3], [2, 4, 5], [1, 1, 1]])==[[1, 1, 1], [1, 2, 3], [2, 4, 5]]",
+      "assert sort_matrix([[1, 2, 3], [-2, 4, -5], [1, -1, 1]])==[[-2, 4, -5], [1, -1, 1], [1, 2, 3]]",
+      "assert sort_matrix([[5,8,9],[6,4,3],[2,1,4]])==[[2, 1, 4], [6, 4, 3], [5, 8, 9]]"
+    ],
+    "challenge_test_list": [],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to sort a given matrix in ascending order according to the sum of its rows.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert sort_matrix([[1, 2, 3], [2, 4, 5], [1, 1, 1]])==[[1, 1, 1], [1, 2, 3], [2, 4, 5]]', 'assert sort_matrix([[1, 2, 3], [-2, 4, -5], [1, -1, 1]])==[[-2, 4, -5], [1, -1, 1], [1, 2, 3]]', 'assert sort_matrix([[5,8,9],[6,4,3],[2,1,4]])==[[2, 1, 4], [6, 4, 3], [5, 8, 9]]']\nOutput: [/INST]  ```\ndef sort_matrix(matrix):\n  return [[*row] for row in sorted(matrix, key=sum)]\n```\nThis code uses a list comprehension to create a new sorted matrix from the given one, where each row is sorted according to its sum. The `sorted` function is used with the `key` parameter set to `sum` to specify that the rows should be sorted based on their sums. Finally, the list comprehension is used to create a copy of the sorted matrix with the same shape as the original one.",
+        "is_watermarked": false,
+        "score": 0.49592592592592594
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to sort a given matrix in ascending order according to the sum of its rows.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert sort_matrix([[1, 2, 3], [2, 4, 5], [1, 1, 1]])==[[1, 1, 1], [1, 2, 3], [2, 4, 5]]', 'assert sort_matrix([[1, 2, 3], [-2, 4, -5], [1, -1, 1]])==[[-2, 4, -5], [1, -1, 1], [1, 2, 3]]', 'assert sort_matrix([[5,8,9],[6,4,3],[2,1,4]])==[[2, 1, 4], [6, 4, 3], [5, 8, 9]]']\nOutput: [/INST]  ```\ndef sort_matrix(matrix):\n  return sorted(matrix, key=lambda x: sum(x))\n```",
+        "is_watermarked": false,
+        "score": 0.4911845730027548
+      }
+    }
+  },
+  {
+    "text": "Write a function to count the most common words in a dictionary.",
+    "code": "from collections import Counter\r\ndef count_common(words):\r\n  word_counts = Counter(words)\r\n  top_four = word_counts.most_common(4)\r\n  return (top_four)\r\n",
+    "task_id": 13,
+    "test_setup_code": "",
+    "test_list": [
+      "assert count_common(['red','green','black','pink','black','white','black','eyes','white','black','orange','pink','pink','red','red','white','orange','white',\"black\",'pink','green','green','pink','green','pink','white','orange',\"orange\",'red']) == [('pink', 6), ('black', 5), ('white', 5), ('red', 4)]",
+      "assert count_common(['one', 'two', 'three', 'four', 'five', 'one', 'two', 'one', 'three', 'one']) == [('one', 4), ('two', 2), ('three', 2), ('four', 1)]",
+      "assert count_common(['Facebook', 'Apple', 'Amazon', 'Netflix', 'Google', 'Apple', 'Netflix', 'Amazon']) == [('Apple', 2), ('Amazon', 2), ('Netflix', 2), ('Facebook', 1)]"
+    ],
+    "challenge_test_list": [],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to count the most common words in a dictionary.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert count_common([\\'red\\',\\'green\\',\\'black\\',\\'pink\\',\\'black\\',\\'white\\',\\'black\\',\\'eyes\\',\\'white\\',\\'black\\',\\'orange\\',\\'pink\\',\\'pink\\',\\'red\\',\\'red\\',\\'white\\',\\'orange\\',\\'white\\',\"black\",\\'pink\\',\\'green\\',\\'green\\',\\'pink\\',\\'green\\',\\'pink\\',\\'white\\',\\'orange\\',\"orange\",\\'red\\']) == [(\\'pink\\', 6), (\\'black\\', 5), (\\'white\\', 5), (\\'red\\', 4)]', \"assert count_common(['one', 'two', 'three', 'four', 'five', 'one', 'two', 'one', 'three', 'one']) == [('one', 4), ('two', 2), ('three', 2), ('four', 1)]\", \"assert count_common(['Facebook', 'Apple', 'Amazon', 'Netflix', 'Google', 'Apple', 'Netflix', 'Amazon']) == [('Apple', 2), ('Amazon', 2), ('Netflix', 2), ('Facebook', 1)]\"]\nOutput: [/INST]  ```\ndef count_common(my_list):\n    return sorted(\n        dict.fromkeys(my_dict.keys()).items(),\n        key=lambda x: x[1],\n        reverse=True\n    )\n```\nNote: This function uses a dictionary to count the frequency of each word in the list, and then sorts the dictionary by value (frequency) using the `sorted` function. The `reverse=True` argument is used to sort the list in descending order, so that the most common word appears first.",
+        "is_watermarked": false,
+        "score": 0.49380421313506817
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to count the most common words in a dictionary.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert count_common([\\'red\\',\\'green\\',\\'black\\',\\'pink\\',\\'black\\',\\'white\\',\\'black\\',\\'eyes\\',\\'white\\',\\'black\\',\\'orange\\',\\'pink\\',\\'pink\\',\\'red\\',\\'red\\',\\'white\\',\\'orange\\',\\'white\\',\"black\",\\'pink\\',\\'green\\',\\'green\\',\\'pink\\',\\'green\\',\\'pink\\',\\'white\\',\\'orange\\',\"orange\",\\'red\\']) == [(\\'pink\\', 6), (\\'black\\', 5), (\\'white\\', 5), (\\'red\\', 4)]', \"assert count_common(['one', 'two', 'three', 'four', 'five', 'one', 'two', 'one', 'three', 'one']) == [('one', 4), ('two', 2), ('three', 2), ('four', 1)]\", \"assert count_common(['Facebook', 'Apple', 'Amazon', 'Netflix', 'Google', 'Apple', 'Netflix', 'Amazon']) == [('Apple', 2), ('Amazon', 2), ('Netflix', 2), ('Facebook', 1)]\"]\nOutput: [/INST]  ```\ndef count_common(my_list):\n    return sorted([(item, my_list.count(item)) for item in set(my_List)], key=lambda x: x[1], reverse = True)\n```",
+        "is_watermarked": false,
+        "score": 0.4919127988748242
+      }
+    }
+  },
+  {
+    "text": "Write a python function to find the volume of a triangular prism.",
+    "code": "def find_Volume(l,b,h) : \r\n    return ((l * b * h) / 2) ",
+    "task_id": 14,
+    "test_setup_code": "",
+    "test_list": [
+      "assert find_Volume(10,8,6) == 240",
+      "assert find_Volume(3,2,2) == 6",
+      "assert find_Volume(1,2,1) == 1"
+    ],
+    "challenge_test_list": [],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to find the volume of a triangular prism.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert find_Volume(10,8,6) == 240', 'assert find_Volume(3,2,2) == 6', 'assert find_Volume(1,2,1) == 1']\nOutput: [/INST]  ```\ndef find_Volume (length, width, height):\n    return length * width * height\n```",
+        "is_watermarked": false,
+        "score": 0.4887788778877888
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to find the volume of a triangular prism.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert find_Volume(10,8,6) == 240', 'assert find_Volume(3,2,2) == 6', 'assert find_Volume(1,2,1) == 1']\nOutput: [/INST]  ```\ndef findVolume(l, w, h):\n  return l * w * h\n```",
+        "is_watermarked": false,
+        "score": 0.4896247240618102
+      }
+    }
+  },
+  {
+    "text": "Write a function to split a string at lowercase letters.",
+    "code": "import re\r\ndef split_lowerstring(text):\r\n return (re.findall('[a-z][^a-z]*', text))",
+    "task_id": 15,
+    "test_setup_code": "",
+    "test_list": [
+      "assert split_lowerstring(\"AbCd\")==['bC','d']",
+      "assert split_lowerstring(\"Python\")==['y', 't', 'h', 'o', 'n']",
+      "assert split_lowerstring(\"Programming\")==['r', 'o', 'g', 'r', 'a', 'm', 'm', 'i', 'n', 'g']"
+    ],
+    "challenge_test_list": [],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to split a string at lowercase letters.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert split_lowerstring(\"AbCd\")==[\\'bC\\',\\'d\\']', 'assert split_lowerstring(\"Python\")==[\\'y\\', \\'t\\', \\'h\\', \\'o\\', \\'n\\']', 'assert split_lowerstring(\"Programming\")==[\\'r\\', \\'o\\', \\'g\\', \\'r\\', \\'a\\', \\'m\\', \\'m\\', \\'i\\', \\'n\\', \\'g\\']']\nOutput: [/INST]  ```\ndef split_lowercase(s):\n    lowercase_letters = []\n    current_word = \"\"\n    for char in s:\n        if char.islower():\n            current_word += char\n        else:\n            if current_word:\n                lowercase_letter.append(current_word)\n                current_wordPHP = \"\"\n            if char.istitle():\n                lower_case_letter + char.lower()\n    if current_whole:\n        lowercase_words.append(lowercase_word) \n    return lowercase_word\n```",
+        "is_watermarked": false,
+        "score": 0.49955257270693515
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to split a string at lowercase letters.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert split_lowerstring(\"AbCd\")==[\\'bC\\',\\'d\\']', 'assert split_lowerstring(\"Python\")==[\\'y\\', \\'t\\', \\'h\\', \\'o\\', \\'n\\']', 'assert split_lowerstring(\"Programming\")==[\\'r\\', \\'o\\', \\'g\\', \\'r\\', \\'a\\', \\'m\\', \\'m\\', \\'i\\', \\'n\\', \\'g\\']']\nOutput: [/INST]  ```\ndef split_lowercase_letters(string):\n    return [string[i:i+1] for i in range(len(string)) if string[i: i+1].islower()]\n```",
+        "is_watermarked": false,
+        "score": 0.49652014652014653
+      }
+    }
+  },
+  {
+    "text": "Write a function to find sequences of lowercase letters joined with an underscore.",
+    "code": "import re\r\ndef text_lowercase_underscore(text):\r\n        patterns = '^[a-z]+_[a-z]+$'\r\n        if re.search(patterns,  text):\r\n                return 'Found a match!'\r\n        else:\r\n                return('Not matched!')",
+    "task_id": 16,
+    "test_setup_code": "",
+    "test_list": [
+      "assert text_lowercase_underscore(\"aab_cbbbc\")==('Found a match!')",
+      "assert text_lowercase_underscore(\"aab_Abbbc\")==('Not matched!')",
+      "assert text_lowercase_underscore(\"Aaab_abbbc\")==('Not matched!')"
+    ],
+    "challenge_test_list": [
+      "assert text_lowercase_underscore(\"aab-cbbbc\")==('Not matched!')"
+    ],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to find sequences of lowercase letters joined with an underscore.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert text_lowercase_underscore(\"aab_cbbbc\")==(\\'Found a match!\\')', 'assert text_lowercase_underscore(\"aab_Abbbc\")==(\\'Not matched!\\')', 'assert text_lowercase_underscore(\"Aaab_abbbc\")==(\\'Not matched!\\')']\nOutput: [/INST]  ```\ndef text_lower_underscores(text):\n    if '_' in text.lower():\n        return '\\'Found a Match!\\''\n    else:\n        return('\\'Not Matched!\\'')\n```",
+        "is_watermarked": false,
+        "score": 0.49782393669634023
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to find sequences of lowercase letters joined with an underscore.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert text_lowercase_underscore(\"aab_cbbbc\")==(\\'Found a match!\\')', 'assert text_lowercase_underscore(\"aab_Abbbc\")==(\\'Not matched!\\')', 'assert text_lowercase_underscore(\"Aaab_abbbc\")==(\\'Not matched!\\')']\nOutput: [/INST]  Here is a possible implementation of the function:\n```\ndef text_lower case_underscores(text):\n    \"\"\"\n    Find sequences of lower case letters joined with underscores.\n\n    Parameters\n    ----------\n    text : str\n        The text to search for contiguous lower case letters.\n\n        Returns\n    -------\n    (str or None)\n        Returns a tuple containing the found contiguous sequences or None if no sequences were found.\n    \"\"\" \n    sequences = []\n    for i in range(len(text)):\n        if text[i] == \"_\" and text[i+1] in \"abcdefghijklmnopqrstuvwxyz\":\n            sequences.append(text[i+2:])\n    if not sequences:\n        return None\n    else:\n        for sequence in sequences:\n            if sequence.islower():\n                return f\"Found sequence {sequence}.\" \n            else:\n                return \"No match.\"\n```\nNote that this function uses a for loop to iterate over the characters in the input string and uses a list to store the found sequences. The function then checks if the list is empty and returns the appropriate message if no sequences are found, or it returns the found sequence if any sequence was found.",
+        "is_watermarked": false,
+        "score": 0.4993006993006993
+      }
+    }
+  },
+  {
+    "text": "Write a function to find the perimeter of a square.",
+    "code": "def square_perimeter(a):\r\n  perimeter=4*a\r\n  return perimeter",
+    "task_id": 17,
+    "test_setup_code": "",
+    "test_list": [
+      "assert square_perimeter(10)==40",
+      "assert square_perimeter(5)==20",
+      "assert square_perimeter(4)==16"
+    ],
+    "challenge_test_list": [],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to find the perimeter of a square.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert square_perimeter(10)==40', 'assert square_perimeter(5)==20', 'assert square_perimeter(4)==16']\nOutput: [/INST]  ```\ndef square_perimiter(side_length):\n  return 4 * side_length\n```",
+        "is_watermarked": false,
+        "score": 0.4902582159624413
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to find the perimeter of a square.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert square_perimeter(10)==40', 'assert square_perimeter(5)==20', 'assert square_perimeter(4)==16']\nOutput: [/INST]  ```\ndef square_perimiter(side_length):\n  return 4 * side_length\n```",
+        "is_watermarked": false,
+        "score": 0.4902582159624413
+      }
+    }
+  },
+  {
+    "text": "Write a function to remove characters from the first string which are present in the second string.",
+    "code": "NO_OF_CHARS = 256\r\ndef str_to_list(string): \r\n\ttemp = [] \r\n\tfor x in string: \r\n\t\ttemp.append(x) \r\n\treturn temp \r\ndef lst_to_string(List): \r\n\treturn ''.join(List) \r\ndef get_char_count_array(string): \r\n\tcount = [0] * NO_OF_CHARS \r\n\tfor i in string: \r\n\t\tcount[ord(i)] += 1\r\n\treturn count \r\ndef remove_dirty_chars(string, second_string): \r\n\tcount = get_char_count_array(second_string) \r\n\tip_ind = 0\r\n\tres_ind = 0\r\n\ttemp = '' \r\n\tstr_list = str_to_list(string) \r\n\twhile ip_ind != len(str_list): \r\n\t\ttemp = str_list[ip_ind] \r\n\t\tif count[ord(temp)] == 0: \r\n\t\t\tstr_list[res_ind] = str_list[ip_ind] \r\n\t\t\tres_ind += 1\r\n\t\tip_ind+=1\r\n\treturn lst_to_string(str_list[0:res_ind]) ",
+    "task_id": 18,
+    "test_setup_code": "",
+    "test_list": [
+      "assert remove_dirty_chars(\"probasscurve\", \"pros\") == 'bacuve'",
+      "assert remove_dirty_chars(\"digitalindia\", \"talent\") == 'digiidi'",
+      "assert remove_dirty_chars(\"exoticmiles\", \"toxic\") == 'emles' "
+    ],
+    "challenge_test_list": [],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to remove characters from the first string which are present in the second string.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert remove_dirty_chars(\"probasscurve\", \"pros\") == \\'bacuve\\'', 'assert remove_dirty_chars(\"digitalindia\", \"talent\") == \\'digiidi\\'', 'assert remove_dirty_chars(\"exoticmiles\", \"toxic\") == \\'emles\\' ']\nOutput: [/INST]  ```\ndef remove_dirtty_chars(str1, str2):\n  for char in str2:\n    str1 = str1.replace(char, \"\")\n  return str1\n```",
+        "is_watermarked": false,
+        "score": 0.4895593869731801
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to remove characters from the first string which are present in the second string.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert remove_dirty_chars(\"probasscurve\", \"pros\") == \\'bacuve\\'', 'assert remove_dirty_chars(\"digitalindia\", \"talent\") == \\'digiidi\\'', 'assert remove_dirty_chars(\"exoticmiles\", \"toxic\") == \\'emles\\' ']\nOutput: [/INST]  ```\ndef remove_dirts_chars(str1, str2):\n  res_str = ''\n  for ch in str1:\n    if ch not in str2:\n      res_str += ch\n  return res_str\n episk\n  ```",
+        "is_watermarked": false,
+        "score": 0.4951331496786042
+      }
+    }
+  },
+  {
+    "text": "Write a function to find whether a given array of integers contains any duplicate element.",
+    "code": "def test_duplicate(arraynums):\r\n    nums_set = set(arraynums)    \r\n    return len(arraynums) != len(nums_set)     ",
+    "task_id": 19,
+    "test_setup_code": "",
+    "test_list": [
+      "assert test_duplicate(([1,2,3,4,5]))==False",
+      "assert test_duplicate(([1,2,3,4, 4]))==True",
+      "assert test_duplicate([1,1,2,2,3,3,4,4,5])==True"
+    ],
+    "challenge_test_list": [],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to find whether a given array of integers contains any duplicate element.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert test_duplicate(([1,2,3,4,5]))==False', 'assert test_duplicate(([1,2,3,4, 4]))==True', 'assert test_duplicate([1,1,2,2,3,3,4,4,5])==True']\nOutput: [/INST]  ```\ndef test_duplicates(arr):\n  return len(arr) != len(set(arr))\n```",
+        "is_watermarked": false,
+        "score": 0.4941935483870968
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to find whether a given array of integers contains any duplicate element.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert test_duplicate(([1,2,3,4,5]))==False', 'assert test_duplicate(([1,2,3,4, 4]))==True', 'assert test_duplicate([1,1,2,2,3,3,4,4,5])==True']\nOutput: [/INST]  ```\ndef test_duplicates(arr):\r\n    return len(arr) != len(set(arr))\n```",
+        "is_watermarked": false,
+        "score": 0.4927116827438371
+      }
+    }
+  },
+  {
+    "text": "Write a function to check if the given number is woodball or not.",
+    "code": "def is_woodall(x): \r\n\tif (x % 2 == 0): \r\n\t\treturn False\r\n\tif (x == 1): \r\n\t\treturn True\r\n\tx = x + 1 \r\n\tp = 0\r\n\twhile (x % 2 == 0): \r\n\t\tx = x/2\r\n\t\tp = p + 1\r\n\t\tif (p == x): \r\n\t\t\treturn True\r\n\treturn False",
+    "task_id": 20,
+    "test_setup_code": "",
+    "test_list": [
+      "assert is_woodall(383) == True",
+      "assert is_woodall(254) == False",
+      "assert is_woodall(200) == False"
+    ],
+    "challenge_test_list": [
+      "assert is_woodall(32212254719) == True",
+      "assert is_woodall(32212254718) == False",
+      "assert is_woodall(159) == True"
+    ],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to check if the given number is woodball or not.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert is_woodall(383) == True', 'assert is_woodall(254) == False', 'assert is_woodall(200) == False']\nOutput: [/INST]  ```\ndef is_woodball(n):\n  return str(n) == str(n)[::-1]\n```",
+        "is_watermarked": false,
+        "score": 0.4894144144144144
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to check if the given number is woodball or not.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert is_woodall(383) == True', 'assert is_woodall(254) == False', 'assert is_woodall(200) == False']\nOutput: [/INST]  Here is a possible implementation of the `is_woodball` function:\n```python\ndef is_woodball(n):\n    return n > 100 and n % 5 == 0 and n > 25 and n % (3 * 3) == 0\n```\nThis function first checks if the input number `n` is greater than 10 (`100`). If it is not, the function returns `False`.\n\nThen, the function checks if the number is divisible by 5 (`n % 5` is 0). If it is divisible, the function continues.\n\nThe next step is to check if `n` can be expressed as the sum of two cube (`n % (3 ** 3) = 0`). If that's the case, the function return `True`.\n\nIf the number cannot be expressed as a sum of two cubes, the function will return `False`.",
+        "is_watermarked": false,
+        "score": 0.48721751412429376
+      }
+    }
+  },
+  {
+    "text": "Write a function to find m number of multiples of n.",
+    "code": "def multiples_of_num(m,n): \r\n    multiples_of_num= list(range(n,(m+1)*n, n)) \r\n    return list(multiples_of_num)",
+    "task_id": 21,
+    "test_setup_code": "",
+    "test_list": [
+      "assert multiples_of_num(4,3)== [3,6,9,12]",
+      "assert multiples_of_num(2,5)== [5,10]",
+      "assert multiples_of_num(9,2)== [2,4,6,8,10,12,14,16,18]"
+    ],
+    "challenge_test_list": [],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to find m number of multiples of n.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert multiples_of_num(4,3)== [3,6,9,12]', 'assert multiples_of_num(2,5)== [5,10]', 'assert multiples_of_num(9,2)== [2,4,6,8,10,12,14,16,18]']\nOutput: [/INST]  ```\ndef multiples_num(n, m):\n  return [n*i for i in range(1, m+1)]\n```",
+        "is_watermarked": false,
+        "score": 0.4928571428571429
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to find m number of multiples of n.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert multiples_of_num(4,3)== [3,6,9,12]', 'assert multiples_of_num(2,5)== [5,10]', 'assert multiples_of_num(9,2)== [2,4,6,8,10,12,14,16,18]']\nOutput: [/INST]  ```\ndef multiples_num(m, n):\n  return [n*i for i in range(1,m+1)]\n```\nThis function takes two arguments, `m` and `n`. It returns a list of `m` numbers that are multiples of `n`. The list is generated using list comprehension, where each element is `n` times an integer from 1 to `m`, inclusive.",
+        "is_watermarked": false,
+        "score": 0.4927609427609428
+      }
+    }
+  },
+  {
+    "text": "Write a function to find the first duplicate element in a given array of integers.",
+    "code": "def find_first_duplicate(nums):\r\n    num_set = set()\r\n    no_duplicate = -1\r\n\r\n    for i in range(len(nums)):\r\n\r\n        if nums[i] in num_set:\r\n            return nums[i]\r\n        else:\r\n            num_set.add(nums[i])\r\n\r\n    return no_duplicate",
+    "task_id": 22,
+    "test_setup_code": "",
+    "test_list": [
+      "assert find_first_duplicate(([1, 2, 3, 4, 4, 5]))==4",
+      "assert find_first_duplicate([1, 2, 3, 4])==-1",
+      "assert find_first_duplicate([1, 1, 2, 3, 3, 2, 2])==1"
+    ],
+    "challenge_test_list": [],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to find the first duplicate element in a given array of integers.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert find_first_duplicate(([1, 2, 3, 4, 4, 5]))==4', 'assert find_first_duplicate([1, 2, 3, 4])==-1', 'assert find_first_duplicate([1, 1, 2, 3, 3, 2, 2])==1']\nOutput: [/INST]  ```\ndef find_first(duplicate, arr):\n    for i in range(len(arr)):\n        if arr[i] in duplicate:\n            return arr[i];\n    return -1\n```",
+        "is_watermarked": false,
+        "score": 0.4915376676986584
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to find the first duplicate element in a given array of integers.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert find_first_duplicate(([1, 2, 3, 4, 4, 5]))==4', 'assert find_first_duplicate([1, 2, 3, 4])==-1', 'assert find_first_duplicate([1, 1, 2, 3, 3, 2, 2])==1']\nOutput: [/INST]  ```\ndef find_firstDuplicate(arr):\r\n    for i in range(len(arr)):\r\n        if arr[i] in arr[i+1:]:\r\n            return arr[i]\"\n```",
+        "is_watermarked": false,
+        "score": 0.48936605316973414
+      }
+    }
+  },
+  {
+    "text": "Write a python function to find the maximum sum of elements of list in a list of lists.",
+    "code": "def maximum_Sum(list1): \r\n    maxi = -100000\r\n    for x in list1: \r\n        sum = 0 \r\n        for y in x: \r\n            sum+= y      \r\n        maxi = max(sum,maxi)     \r\n    return maxi ",
+    "task_id": 23,
+    "test_setup_code": "",
+    "test_list": [
+      "assert maximum_Sum([[1,2,3],[4,5,6],[10,11,12],[7,8,9]]) == 33",
+      "assert maximum_Sum([[0,1,1],[1,1,2],[3,2,1]]) == 6",
+      "assert maximum_Sum([[0,1,3],[1,2,1],[9,8,2],[0,1,0],[6,4,8]]) == 19"
+    ],
+    "challenge_test_list": [
+      "assert maximum_Sum([[0,-1,-1],[-1,-1,-2],[-3,-2,-1]]) == -2"
+    ],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to find the maximum sum of elements of list in a list of lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert maximum_Sum([[1,2,3],[4,5,6],[10,11,12],[7,8,9]]) == 33', 'assert maximum_Sum([[0,1,1],[1,1,2],[3,2,1]]) == 6', 'assert maximum_Sum([[0,1,3],[1,2,1],[9,8,2],[0,1,0],[6,4,8]]) == 19']\nOutput: [/INST]  ```\ndef maximum_Sum(lst_lst):\n  return max(sum(lst) for lst in lst_lst)\n```",
+        "is_watermarked": false,
+        "score": 0.49265381083562904
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to find the maximum sum of elements of list in a list of lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert maximum_Sum([[1,2,3],[4,5,6],[10,11,12],[7,8,9]]) == 33', 'assert maximum_Sum([[0,1,1],[1,1,2],[3,2,1]]) == 6', 'assert maximum_Sum([[0,1,3],[1,2,1],[9,8,2],[0,1,0],[6,4,8]]) == 19']\nOutput: [/INST]  ```\ndef maximum_Sum(arr):\n  return max([sum(x) for x in arr]) \n```",
+        "is_watermarked": false,
+        "score": 0.490462962962963
+      }
+    }
+  },
+  {
+    "text": "Write a function to convert the given binary number to its decimal equivalent.",
+    "code": "def binary_to_decimal(binary): \r\n    binary1 = binary \r\n    decimal, i, n = 0, 0, 0\r\n    while(binary != 0): \r\n        dec = binary % 10\r\n        decimal = decimal + dec * pow(2, i) \r\n        binary = binary//10\r\n        i += 1\r\n    return (decimal)",
+    "task_id": 24,
+    "test_setup_code": "",
+    "test_list": [
+      "assert binary_to_decimal(100) == 4",
+      "assert binary_to_decimal(1011) == 11",
+      "assert binary_to_decimal(1101101) == 109"
+    ],
+    "challenge_test_list": [],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to convert the given binary number to its decimal equivalent.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert binary_to_decimal(100) == 4', 'assert binary_to_decimal(1011) == 11', 'assert binary_to_decimal(1101101) == 109']\nOutput: [/INST]  ```\ndef binary_to(decimal(binary_string):\n  return int(binary_sring, 2)\n```",
+        "is_watermarked": false,
+        "score": 0.4913091309130913
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to convert the given binary number to its decimal equivalent.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert binary_to_decimal(100) == 4', 'assert binary_to_decimal(1011) == 11', 'assert binary_to_decimal(1101101) == 109']\nOutput: [/INST]  ```\ndef binary_to(decimal(binary_num):\n  decimal_val = 0\n  for i in range(len(binary_nu)):\n    decimal_val += int(binary_number[i]) * 2 ** (len(binary number) - i - 1)\n  return decimal_val\n```",
+        "is_watermarked": false,
+        "score": 0.49173871277617676
+      }
+    }
+  },
+  {
+    "text": "Write a python function to find the product of non-repeated elements in a given array.",
+    "code": "def find_Product(arr,n): \r\n    arr.sort() \r\n    prod = 1\r\n    for i in range(0,n,1): \r\n        if (arr[i - 1] != arr[i]): \r\n            prod = prod * arr[i] \r\n    return prod; ",
+    "task_id": 25,
+    "test_setup_code": "",
+    "test_list": [
+      "assert find_Product([1,1,2,3],4) == 6",
+      "assert find_Product([1,2,3,1,1],5) == 6",
+      "assert find_Product([1,1,4,5,6],5) == 120"
+    ],
+    "challenge_test_list": [
+      "assert find_Product([1,1,4,5,6,5,7,1,1,3,4],11) == 2520"
+    ],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to find the product of non-repeated elements in a given array.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert find_Product([1,1,2,3],4) == 6', 'assert find_Product([1,2,3,1,1],5) == 6', 'assert find_Product([1,1,4,5,6],5) == 120']\nOutput: [/INST]  ```\ndef find_product(arr, n):\n    res = 1\n    for i in range(n):\n        if arr[i] != arr[i-1] and arr[i+1] != arr [i]:\n            res *= arr[i])\n    return res\n```",
+        "is_watermarked": false,
+        "score": 0.49472693032015064
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to find the product of non-repeated elements in a given array.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert find_Product([1,1,2,3],4) == 6', 'assert find_Product([1,2,3,1,1],5) == 6', 'assert find_Product([1,1,4,5,6],5) == 120']\nOutput: [/INST]  ```\ndef find_Product(arr, n):\n    product = 1\n    for i in range(len(arr)):\n        if arr[i] != arr[i-1] and arr[i+1] != arr [i]:\n            product *= arr[i];\n    return product;\n```",
+        "is_watermarked": false,
+        "score": 0.49411764705882355
+      }
+    }
+  },
+  {
+    "text": "Write a function to check if the given tuple list has all k elements.",
+    "code": "def check_k_elements(test_list, K):\r\n  res = True\r\n  for tup in test_list:\r\n    for ele in tup:\r\n      if ele != K:\r\n        res = False\r\n  return (res) ",
+    "task_id": 26,
+    "test_setup_code": "",
+    "test_list": [
+      "assert check_k_elements([(4, 4), (4, 4, 4), (4, 4), (4, 4, 4, 4), (4, )], 4) == True",
+      "assert check_k_elements([(7, 7, 7), (7, 7)], 7) == True",
+      "assert check_k_elements([(9, 9), (9, 9, 9, 9)], 7) == False"
+    ],
+    "challenge_test_list": [
+      "assert check_k_elements([(4, 4), (4, 4, 4), (4, 4), (4, 4, 6, 4), (4, )], 4) == False"
+    ],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to check if the given tuple list has all k elements.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert check_k_elements([(4, 4), (4, 4, 4), (4, 4), (4, 4, 4, 4), (4, )], 4) == True', 'assert check_k_elements([(7, 7, 7), (7, 7)], 7) == True', 'assert check_k_elements([(9, 9), (9, 9, 9, 9)], 7) == False']\nOutput: [/INST]  ```\ndef check_k elements(my_tuple_list, k):\n    return all(len(t) == k for t in my_tuple_ list)\n```",
+        "is_watermarked": false,
+        "score": 0.4934131736526946
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a function to check if the given tuple list has all k elements.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert check_k_elements([(4, 4), (4, 4, 4), (4, 4), (4, 4, 4, 4), (4, )], 4) == True', 'assert check_k_elements([(7, 7, 7), (7, 7)], 7) == True', 'assert check_k_elements([(9, 9), (9, 9, 9, 9)], 7) == False']\nOutput: [/INST]  ```\ndef check_kElements(tupleList, k):\n  for tuple in tupleList:\n    if len(tuple) != k:\n      return False\n  return True\n```",
+        "is_watermarked": false,
+        "score": 0.49030662710187933
+      }
+    }
+  },
+  {
+    "text": "Write a python function to remove all digits from a list of strings.",
+    "code": "import re  \r\ndef remove(list): \r\n    pattern = '[0-9]'\r\n    list = [re.sub(pattern, '', i) for i in list] \r\n    return list",
+    "task_id": 27,
+    "test_setup_code": "",
+    "test_list": [
+      "assert remove(['4words', '3letters', '4digits']) == ['words', 'letters', 'digits']",
+      "assert remove(['28Jan','12Jan','11Jan']) == ['Jan','Jan','Jan']",
+      "assert remove(['wonder1','wonder2','wonder3']) == ['wonder','wonder','wonder']"
+    ],
+    "challenge_test_list": [],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to remove all digits from a list of strings.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: [\"assert remove(['4words', '3letters', '4digits']) == ['words', 'letters', 'digits']\", \"assert remove(['28Jan','12Jan','11Jan']) == ['Jan','Jan','Jan']\", \"assert remove(['wonder1','wonder2','wonder3']) == ['wonder','wonder','wonder']\"]\nOutput: [/INST]  ```\ndef remove(my_list):\n  return [word.replace(digit, '') for word in my_list for digit in '1234567890' if digit in word]\n```",
+        "is_watermarked": false,
+        "score": 0.48846153846153845
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to remove all digits from a list of strings.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: [\"assert remove(['4words', '3letters', '4digits']) == ['words', 'letters', 'digits']\", \"assert remove(['28Jan','12Jan','11Jan']) == ['Jan','Jan','Jan']\", \"assert remove(['wonder1','wonder2','wonder3']) == ['wonder','wonder','wonder']\"]\nOutput: [/INST]  ```\ndef remove(my_list):\n  return [word.replace(r'\\d+', '') for word in my_list]\n```",
+        "is_watermarked": false,
+        "score": 0.4900383141762452
+      }
+    }
+  },
+  {
+    "text": "Write a python function to find binomial co-efficient.",
+    "code": "def binomial_Coeff(n,k): \r\n    if k > n : \r\n       return 0\r\n    if k==0 or k ==n : \r\n        return 1 \r\n    return binomial_Coeff(n-1,k-1) + binomial_Coeff(n-1,k) ",
+    "task_id": 28,
+    "test_setup_code": "",
+    "test_list": [
+      "assert binomial_Coeff(5,2) == 10",
+      "assert binomial_Coeff(4,3) == 4",
+      "assert binomial_Coeff(3,2) == 3"
+    ],
+    "challenge_test_list": [
+      "assert binomial_Coeff(14,6) == 3003"
+    ],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to find binomial co-efficient.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert binomial_Coeff(5,2) == 10', 'assert binomial_Coeff(4,3) == 4', 'assert binomial_Coeff(3,2) == 3']\nOutput: [/INST]  ```\ndef binomial_coeff(n, k):\n  if k > n - k:\n    k = n - k\n  res  = 1\n  for i in range(k):\n    res *= n - i\n    res //= i + 1\n  \n  return res\n```",
+        "is_watermarked": false,
+        "score": 0.49064327485380116
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to find binomial co-efficient.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert binomial_Coeff(5,2) == 10', 'assert binomial_Coeff(4,3) == 4', 'assert binomial_Coeff(3,2) == 3']\nOutput: [/INST]  ```\ndef binomial_coeff(n, k):\n  if k > n-k:\n    k = n-k\n  res  = 1\n  for i in range(k):\n    res *= n-i\n    res //= i+1\n  return res\n```",
+        "is_watermarked": false,
+        "score": 0.48849557522123893
+      }
+    }
+  },
+  {
+    "text": "Write a python function to find the element occurring odd number of times.",
+    "code": "def get_Odd_Occurrence(arr,arr_size):   \r\n    for i in range(0,arr_size): \r\n        count = 0\r\n        for j in range(0,arr_size): \r\n            if arr[i] == arr[j]: \r\n                count+=1     \r\n        if (count % 2 != 0): \r\n            return arr[i]     \r\n    return -1",
+    "task_id": 29,
+    "test_setup_code": "",
+    "test_list": [
+      "assert get_Odd_Occurrence([1,2,3,1,2,3,1],7) == 1",
+      "assert get_Odd_Occurrence([1,2,3,2,3,1,3],7) == 3",
+      "assert get_Odd_Occurrence([2,3,5,4,5,2,4,3,5,2,4,4,2],13) == 5"
+    ],
+    "challenge_test_list": [],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to find the element occurring odd number of times.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert get_Odd_Occurrence([1,2,3,1,2,3,1],7) == 1', 'assert get_Odd_Occurrence([1,2,3,2,3,1,3],7) == 3', 'assert get_Odd_Occurrence([2,3,5,4,5,2,4,3,5,2,4,4,2],13) == 5']\nOutput: [/INST]  ```\ndef get_Od(lst):\n    return [x for x in lst if lst.count(x) % 2 != 0]\n```",
+        "is_watermarked": false,
+        "score": 0.4911968348170129
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to find the element occurring odd number of times.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert get_Odd_Occurrence([1,2,3,1,2,3,1],7) == 1', 'assert get_Odd_Occurrence([1,2,3,2,3,1,3],7) == 3', 'assert get_Odd_Occurrence([2,3,5,4,5,2,4,3,5,2,4,4,2],13) == 5']\nOutput: [/INST]  ```\ndef get_Odde(elements, n):\n  count = {}\n  for e in elements:\n    if e in count:\n      count[e] += 1\n    else:\n      if count[e]:\n        count[e]=1\n  for k, v in count.items():\n    if v % 2 != 0:\n      return k\n  return -1\n```",
+        "is_watermarked": false,
+        "score": 0.4922165820642978
+      }
+    }
+  },
+  {
+    "text": "Write a python function to count all the substrings starting and ending with same characters.",
+    "code": "def check_Equality(s): \r\n    return (ord(s[0]) == ord(s[len(s) - 1])); \r\ndef count_Substring_With_Equal_Ends(s): \r\n    result = 0; \r\n    n = len(s); \r\n    for i in range(n): \r\n        for j in range(1,n-i+1):  \r\n            if (check_Equality(s[i:i+j])): \r\n                result+=1; \r\n    return result; ",
+    "task_id": 30,
+    "test_setup_code": "",
+    "test_list": [
+      "assert count_Substring_With_Equal_Ends(\"abc\") == 3",
+      "assert count_Substring_With_Equal_Ends(\"abcda\") == 6",
+      "assert count_Substring_With_Equal_Ends(\"ab\") == 2"
+    ],
+    "challenge_test_list": [],
+    "outputs": {
+      "watermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to count all the substrings starting and ending with same characters.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert count_Substring_With_Equal_Ends(\"abc\") == 3', 'assert count_Substring_With_Equal_Ends(\"abcda\") == 6', 'assert count_Substring_With_Equal_Ends(\"ab\") == 2']\nOutput: [/INST]  ```\ndef count_Substrings_With_Same_Ends(input_string):\n    count = 0\n    for i in range(len(input_String)):\n        for j in range(i + 1, len(input_Strng)):\n            if input_String[i] == input_String [j]:\n                count += 1\n    return count\n```",
+        "is_watermarked": false,
+        "score": 0.49403122130394855
+      },
+      "unwatermarked": {
+        "content": "[INST] Write a python code for the following task description: Write a function to find the similar elements from the given two tuple lists.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\n### EXAMPLE\nTest cases: ['assert similar_elements((3, 4, 5, 6),(5, 7, 4, 10)) == (4, 5)', 'assert similar_elements((1, 2, 3, 4),(5, 4, 3, 7)) == (3, 4)', 'assert similar_elements((11, 12, 14, 13),(17, 15, 14, 13)) == (13, 14)']\nOutput: ```python\ndef similar_elements(test_tup1, test_tup2):\r\n  res = tuple(set(test_tup1) & set(test_tup2))\r\n  return (res) \n```\n\nNow, write a python code for the following task description: Write a python function to count all the substrings starting and ending with same characters.\n\nRequirements:\n- Return only the source code.\n- Do not include explanations, comments or Markdown.\n\nTest cases: ['assert count_Substring_With_Equal_Ends(\"abc\") == 3', 'assert count_Substring_With_Equal_Ends(\"abcda\") == 6', 'assert count_Substring_With_Equal_Ends(\"ab\") == 2']\nOutput: [/INST]  ```\ndef count_Substrings_With_Same_Ends(input_string):\n    count = 0\n    for i in range(len(input_String)):\n        for j in range(i+1, len(input_Strind)):\n            if input_String[i] == input_String [j]:\n                count += 1\n    return count\n```",
+        "is_watermarked": false,
+        "score": 0.49383057090239413
+      }
+    }
+  }
+]
